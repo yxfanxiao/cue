@@ -1,0 +1,27 @@
+{
+  "name": "cue",
+  "version": "1.0.0",
+  "description": "A team coopeartion application.",
+  "author": "Liu, huayun <huayun.liu@gmail.com>",
+  "scripts": {
+    "start": "babel-node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yxfanxiao/cue.git"
+  },
+  "keywords": [
+    "team",
+    "coopeartion"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yxfanxiao/cue/issues"
+  },
+  "homepage": "https://github.com/yxfanxiao/cue#readme",
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0"
+  }
+}

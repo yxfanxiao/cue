@@ -1,0 +1,32 @@
+import http from 'http'
+import app from '../server/app'
+
+const port = normalizePort(process.env.PORT || 8080)
+app.set('port', port)
+
+// create HTTP server
+const server = http.createServer(app)
+
+server.listen(port, (error) => {
+    if (error) {
+        console.error(error)
+    } else {
+        console.info(
+            ` ${app.get('dev') ? 'Development' : 'Production'} env ===> listening on port ${port}.  (ง •̀_•́)ง `
+        )
+    }
+})
+
+function normalizePort(val) {
+    const port = parseInt(val, 10)
+
+    if (isNaN(port)) {
+        return val
+    }
+
+    if (port >= 0) {
+        return port
+    }
+
+    return false
+}

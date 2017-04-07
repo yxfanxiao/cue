@@ -11,9 +11,12 @@ app.set('view engine', 'jade')
 // develpoment or production environment
 app.set('dev', process.env.NODE_ENV !== 'production')
 
+// static file
+app.use(express.static(path.join(process.cwd(), 'build')))
+
 // Routers
 app.use('/', (req, res, next) => {
-    res.send('hello world')
+    res.render('index')
 })
 
 

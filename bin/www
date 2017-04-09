@@ -12,7 +12,7 @@ server.listen(port, (error) => {
         console.error(error)
     } else {
         console.info(
-            ` ${app.get('dev') ? 'Development' : 'Production'} env ===> listening on port ${port}.  (ง •̀_•́)ง `
+            ` ${app.get('env')} env ===> listening on port ${port}.  (ง •̀_•́)ง `
         )
     }
 })

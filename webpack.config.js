@@ -4,7 +4,8 @@ const webpack = require('webpack')
 // dev
 module.exports = {
     entry: [
-        'webpack-hot-middleware/client?reload=true',
+        'react-hot-loader/patch',
+        'webpack-hot-middleware/client',
         path.join(process.cwd(), 'app/app.jsx'),
     ],
     output: {

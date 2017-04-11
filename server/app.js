@@ -8,18 +8,20 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 
 if (app.get('env') === 'development') {
-    const config = require('../webpack.config')
-    const webpack = require('webpack')
-    const webpackMiddleware = require('webpack-dev-middleware')
-    const webpackHotMiddleware = require('webpack-hot-middleware')
+    // webpack progress bar plugin's log clashed with server's launch log
+    setImmediate(() => {
+        const config = require('../webpack.config')
+        const webpack = require('webpack')
+        const webpackMiddleware = require('webpack-dev-middleware')
+        const webpackHotMiddleware = require('webpack-hot-middleware')
 
-
-    const compiler = webpack(config)
-    const middleware = webpackMiddleware(compiler, {
-        publicPath: config.output.publicPath,
+        const compiler = webpack(config)
+        const middleware = webpackMiddleware(compiler, {
+            publicPath: config.output.publicPath,
+        })
+        app.use(middleware)
+        app.use(webpackHotMiddleware(compiler))
     })
-    app.use(middleware)
-    app.use(webpackHotMiddleware(compiler))
 }
 
 // static file

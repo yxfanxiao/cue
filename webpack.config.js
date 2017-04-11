@@ -1,4 +1,5 @@
 const path = require('path')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const webpack = require('webpack')
 
 // dev
@@ -6,7 +7,7 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack-hot-middleware/client',
-        path.join(process.cwd(), 'app/app.jsx'),
+        path.join(process.cwd(), 'app/index.jsx'),
     ],
     output: {
         path: path.join(process.cwd(), 'build'),
@@ -28,6 +29,7 @@ module.exports = {
     },
     devtool: 'cheap-module-eval-source-map',
     plugins: [
+        new ProgressBarPlugin(),
         new webpack.DefinePlugin({
             PRODUCTION: JSON.stringify(process.env.NODE_ENV === 'production')
         }),

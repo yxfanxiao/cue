@@ -31,7 +31,7 @@ module.exports = {
     plugins: [
         new ProgressBarPlugin(),
         new webpack.DefinePlugin({
-            PRODUCTION: JSON.stringify(process.env.NODE_ENV === 'production')
+            __PRODUCTION__: JSON.stringify(process.env.NODE_ENV === 'production')
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],

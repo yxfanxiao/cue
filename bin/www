@@ -1,7 +1,11 @@
+const chalk = require('chalk')
 const http = require('http')
-const app = require('../server/app')
-
 const port = normalizePort(process.env.PORT || 8080)
+
+console.log(`  ${getEnv()} env ===> listening on port ${port}.  (ง •̀_•́)ง
+`)
+
+const app = require('../server/app')
 app.set('port', port)
 
 // create HTTP server
@@ -10,11 +14,6 @@ const server = http.createServer(app)
 server.listen(port, (error) => {
     if (error) {
         console.error(error)
-    } else {
-        console.info(
-            `  ${app.get('env')} env ===> listening on port ${port}.  (ง •̀_•́)ง 
-            `
-        )
     }
 })
 
@@ -30,4 +29,8 @@ function normalizePort(val) {
     }
 
     return false
+}
+
+function getEnv() {
+    return process.env.NODE_ENV === 'production' ? chalk.bold.green('production') : chalk.bold.yellow('development')
 }

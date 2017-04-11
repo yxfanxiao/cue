@@ -2,15 +2,18 @@ const path = require('path')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const webpack = require('webpack')
 
+const SRC = path.join(process.cwd(), 'app')
+const BUILD = path.join(process.cwd(), 'build')
+
 // dev
 module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack-hot-middleware/client',
-        path.join(process.cwd(), 'app/index.jsx'),
+        path.join(SRC, 'index.jsx'),
     ],
     output: {
-        path: path.join(process.cwd(), 'build'),
+        path: BUILD,
         publicPath: '/',
         filename: '[name].js',
         chunkFilename: '[name].chunk.js',
@@ -26,6 +29,11 @@ module.exports = {
     resolve: {
         modules: [ 'app', 'node_modules' ],
         extensions: [ '.js', '.jsx' ],
+        alias: {
+            ACTIONS: path.join(SRC, 'redux/actions'),
+            REDUCERS:path.join(SRC, 'redux/reducers'),
+            STORE:path.join(SRC, 'redux/store'),
+        }
     },
     devtool: 'cheap-module-eval-source-map',
     plugins: [

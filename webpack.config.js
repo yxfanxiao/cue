@@ -31,8 +31,9 @@ module.exports = {
         extensions: [ '.js', '.jsx' ],
         alias: {
             ACTIONS: path.join(SRC, 'redux/actions'),
-            REDUCERS:path.join(SRC, 'redux/reducers'),
-            STORE:path.join(SRC, 'redux/store'),
+            REDUCERS: path.join(SRC, 'redux/reducers'),
+            STORE: path.join(SRC, 'redux/store'),
+            COMPONENTS: path.join(SRC, 'components'),
         }
     },
     devtool: 'cheap-module-eval-source-map',

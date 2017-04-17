@@ -5,37 +5,27 @@ import {
     Route,
     Link,
 } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
 
-import { add } from 'ACTIONS/count'
+import * as actionsCreators from 'ACTIONS/count'
 
 class App extends Component {
     render() {
-        const { dispatch } = this.props
         return (
-        <Router>
-            <div className='app'>
-                { this.props.count }
-                <button onClick={() => dispatch(add())}>Add</button>
-                <Link to='/home'>Home</Link>
-                <Link to='/page'>Page</Link>
-
-                {
-                    true
-                }
-                <hr />
-                ''
-                <Route path='/home' render={()=> <button>Home</button>} />
-                <hr />
-                <Route path='/page' render={()=> <button>Page</button>} />
-            </div>
-        </Router>
+            <Router>
+                <div className='app'>
+                    {this.props.count}
+                    <button onClick={this.props.add}>Add</button>
+                </div>
+            </Router>
         )
     }
 }
 
-function select(state) {
+function mapStateToProps(state) {
     return {
         count: state.count
     }
 }
-export default connect(select)(App)
+
+export default connect(mapStateToProps, actionsCreators)(App)

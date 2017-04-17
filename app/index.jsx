@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import store from 'STORE'
-import App from './containers/App'
+import App from 'CONTAINERS/App'
 
 // why did you update: https://github.com/garbles/why-did-you-update
-if (!__PRODUCTION__) {
+if (__DEV__ && __WHY_DID_YOU_UPDATE__) {
     const { whyDidYouUpdate } = require('why-did-you-update')
     whyDidYouUpdate(React)
 }
@@ -27,6 +27,6 @@ render(App)
 
 // react hmr
 if (module.hot) {
-    module.hot.accept('./containers/App', () => render(App))
+    module.hot.accept('CONTAINERS/App', () => render(App))
 }
 

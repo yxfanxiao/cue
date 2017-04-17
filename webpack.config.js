@@ -34,13 +34,16 @@ module.exports = {
             REDUCERS: path.join(SRC, 'redux/reducers'),
             STORE: path.join(SRC, 'redux/store'),
             COMPONENTS: path.join(SRC, 'components'),
+            CONTAINERS: path.join(SRC, 'containers'),
         }
     },
     devtool: 'cheap-module-eval-source-map',
     plugins: [
         new ProgressBarPlugin(),
         new webpack.DefinePlugin({
-            __PRODUCTION__: JSON.stringify(process.env.NODE_ENV === 'production')
+            __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
+            __COMPONENT_DEVTOOLS__: JSON.stringify(true),
+            __WHY_DID_YOU_UPDATE__: JSON.stringify(false),
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],

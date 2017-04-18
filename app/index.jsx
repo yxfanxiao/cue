@@ -1,9 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import store from 'STORE'
 import App from 'CONTAINERS/App'
+
 
 // why did you update: https://github.com/garbles/why-did-you-update
 if (__DEV__ && __WHY_DID_YOU_UPDATE__) {
@@ -15,7 +17,9 @@ const render = Component => {
     ReactDOM.render(
         <AppContainer>
             <Provider store={store}>
-                <Component />
+                <Router>
+                    <Component />
+                </Router>
             </Provider>
         </AppContainer>,
         document.querySelector('#root')

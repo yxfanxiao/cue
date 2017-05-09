@@ -1,18 +1,26 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
+import styled from 'styled-components'
+import P from 'STYLED/P'
+import Div from 'STYLED/Div'
 
-class Nav extends Component {
+const StyledDiv = styled(Div)`
+    color: blue;
+
+    > section {
+        color: red;
+    }
+`
+
+class Projects extends Component {
     render() {
         return (
-            <nav className='app-nav'>
-                <header className='app-nav-header'>
-                    <Link to='/projects'>Projects</Link>
-                    <Link to='/project/1'>Project 1</Link>
-                    <Link to='/project/2'>Project 2</Link>
-                </header>
-            </nav>
+            <StyledDiv>
+                <P>Switch Mode: grid | list</P>
+                <h6>Project 1,2,3</h6>
+            </StyledDiv>
         )
     }
 }
 
-export default Nav
+export default Projects

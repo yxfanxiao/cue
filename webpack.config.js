@@ -20,20 +20,20 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.jsx?$/,
-                use: 'babel-loader',
-            },
+            { test: /\.jsx?$/, use: 'babel-loader' },
+            { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' } ]},
+            { test: /\.less$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' } ]},
         ],
     },
     resolve: {
         modules: [ 'app', 'node_modules' ],
-        extensions: [ '.js', '.jsx' ],
+        extensions: [ '.js', '.jsx', '.less' ],
         alias: {
             ACTIONS: path.join(SRC, 'redux/actions'),
             REDUCERS: path.join(SRC, 'redux/reducers'),
             STORE: path.join(SRC, 'redux/store'),
             COMPONENTS: path.join(SRC, 'components'),
+            STYLED: path.join(SRC, 'styled'),
             CONTAINERS: path.join(SRC, 'containers'),
         }
     },

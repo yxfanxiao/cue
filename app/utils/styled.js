@@ -1,13 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
-import Div from 'STYLED/Div'
+import styled, { css } from 'styled-components'
 
-const HBox = styled(Div)`
+/* default style:
+ * row, wrap, center
+**/
+const flex = css`
     display: flex;
-    flex-direction: row;
+    flex-direction: ${props => props.column ? 'row' : 'column'};
     flex-wrap: ${props => props.wrap ? 'wrap' : 'nowrap'};
     justify-content: ${props => props.center ? 'center' : 'flex-start'};
     align-items: ${props => props.center ? 'cneter' : 'stretch'};
 `
 
-export default HBox
+export flex

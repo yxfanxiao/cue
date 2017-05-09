@@ -35,6 +35,7 @@ module.exports = {
             COMPONENTS: path.join(SRC, 'components'),
             STYLED: path.join(SRC, 'styled'),
             CONTAINERS: path.join(SRC, 'containers'),
+            UTILS: path.join(SRC, 'utils'),
         }
     },
     devtool: 'cheap-module-eval-source-map',

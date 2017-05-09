@@ -7,14 +7,7 @@ import ProjectNav from './ProjectNav'
 import VBox from 'STYLED/VBox'
 
 const StyledVBox = styled(VBox)`
-    > nav {
-        flex: 0 0 auto;
-        background: yellow;   
-    }
 
-    > div {
-        flex: 1 0 0;
-    }
 `
 
 class Project extends Component {

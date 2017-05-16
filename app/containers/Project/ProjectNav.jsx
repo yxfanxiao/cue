@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
-import Nav from 'STYLED/Nav'
 
 class ProjectNav extends Component {
     render() {
         return (
-            <Nav>
+            <nav>
                 Project Nav
-            </Nav>
+            </nav>
         )
     }
 }

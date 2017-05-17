@@ -5,9 +5,7 @@ import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
 import store from 'STORE'
 import App from 'CONTAINERS/App'
-
-import 'normalize.css'
-import './style'
+import './style/index.jsx'
 
 // why did you update: https://github.com/garbles/why-did-you-update
 if (__DEV__ && __WHY_DID_YOU_UPDATE__) {

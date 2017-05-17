@@ -33,7 +33,6 @@ module.exports = {
             REDUCERS: path.join(SRC, 'redux/reducers'),
             STORE: path.join(SRC, 'redux/store'),
             COMPONENTS: path.join(SRC, 'components'),
-            STYLED: path.join(SRC, 'styled'),
             CONTAINERS: path.join(SRC, 'containers'),
             UTILS: path.join(SRC, 'utils'),
         }

@@ -1,2 +1,2 @@
 import 'normalize.css'
-import './style'
+import './index.less'

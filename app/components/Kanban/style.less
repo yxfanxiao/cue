@@ -1,0 +1,17 @@
+@import "../../style/index";
+
+.kanban {
+    width: 100%;
+    height: 100%;
+    background: @blue100;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-start: flex-start;
+    align-items: flex-start;
+
+    > .stage {
+        flex: 0 0 @stage-width;
+        height: 100%;
+        background: @stage-background;
+    }
+}

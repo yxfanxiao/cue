@@ -4,7 +4,7 @@ import { Route, Link } from 'react-router-dom'
 class ProjectNav extends Component {
     render() {
         return (
-            <nav>
+            <nav className='project-nav'>
                 Project Nav
             </nav>
         )

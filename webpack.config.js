@@ -34,7 +34,7 @@ module.exports = {
             STORE: path.join(SRC, 'redux/store'),
             COMPONENTS: path.join(SRC, 'components'),
             CONTAINERS: path.join(SRC, 'containers'),
-            UTILS: path.join(SRC, 'utils'),
+            STYLE: path.join(SRC, 'style'),
         }
     },
     devtool: 'cheap-module-eval-source-map',

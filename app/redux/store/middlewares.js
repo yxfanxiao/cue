@@ -1,7 +1,9 @@
 import thunkMiddleware from 'redux-thunk'
+import promiseMiddleware from 'redux-promise'
 
 const middlewares = [
-    thunkMiddleware
+    // thunkMiddleware,
+    promiseMiddleware,
 ]
 
 if (__DEV__) {

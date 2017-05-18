@@ -5,13 +5,13 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import ProjectNav from './ProjectNav'
 import Kanban from 'COMPONENTS/Kanban'
-import scrumActionCreators from 'ACTIONS/scrum'
+import stageActionCreators from 'ACTIONS/stage'
 
 @connect(
     state => ({
         scrum: state.scrum,
     }),
-    scrumActionCreators,
+    stageActionCreators,
 )
 
 export default class Project extends Component {

@@ -4,7 +4,9 @@
   "description": "A team coopeartion application.",
   "author": "Liu, huayun <huayun.liu@gmail.com>",
   "scripts": {
-    "start": "cross-env NODE_ENV=development babel-node ./bin/www"
+    "start": "cross-env NODE_ENV=development babel-node ./bin/www",
+    "dev": "cross-env NODE_ENV=development babel-node ./bin/www",
+    "mock": "babel-node ./mock-server"
   },
   "repository": {
     "type": "git",
@@ -46,11 +48,15 @@
     "react-router-dom": "^4.1.0",
     "redux": "^3.6.0",
     "redux-actions": "^2.0.3",
+    "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.3"
   },
   "devDependencies": {
+    "dyson": "^1.2.0",
+    "dyson-generators": "^0.1.1",
+    "pm2": "^2.4.6",
     "progress-bar-webpack-plugin": "^1.9.3",
     "react-hot-loader": "^3.0.0-beta.6",
     "redux-logger": "^3.0.1",

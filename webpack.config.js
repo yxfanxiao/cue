@@ -10,6 +10,7 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack-hot-middleware/client',
+        'babel-polyfill',
         path.join(SRC, 'index.jsx'),
     ],
     output: {

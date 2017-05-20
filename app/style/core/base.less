@@ -10,3 +10,17 @@ html, body, #root {
     color: @text-color;
     background: @body-background;
 }
+
+
+// scroll always show
+.scroll {
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #A6A6A6;
+    }
+    &::-webkit-scrollbar-track {
+        background: #E5E5E5;
+    }
+}

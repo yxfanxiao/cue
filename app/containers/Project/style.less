@@ -3,9 +3,15 @@
 .project {
     height: 100%;
     background: @red100;
-
+    display: flex;
+    flex-flow: column nowrap;
 
     > .project-nav {
         height: @header-height;
+        flex: 0 0 auto;
+    }
+
+    > .kanban {
+        flex: 1 0 0;
     }
 }

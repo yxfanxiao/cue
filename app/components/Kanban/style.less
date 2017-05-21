@@ -4,14 +4,26 @@
     width: 100%;
     height: 100%;
     background: @blue100;
-    display: flex;
-    flex-flow: row nowrap;
-    flex-start: flex-start;
-    align-items: flex-start;
+    overflow: hidden;
 
-    > .stage {
-        flex: 0 0 @stage-width;
+    > .stage-list {
+        width: 100%;
         height: 100%;
-        background: @stage-background;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0;
+        padding: @kanban-padding;
+        list-style: none;
+        overflow-x: scroll;
+
+        > .stage {
+            flex: 0 0 @stage-width;
+            height: 100%;
+            background: @stage-background;
+            overflow-y: scroll;
+            margin-right: @kanban-padding;
+        }
     }
 }

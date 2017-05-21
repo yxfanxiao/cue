@@ -2,6 +2,7 @@ import { handleActions } from 'redux-actions'
 
 const initialState = {
     stages: {},
+    stageIds: [],
 }
 
 export default handleActions({
@@ -9,6 +10,10 @@ export default handleActions({
         stages: { 
             ...state.stages, 
             [ action.payload.id ]: action.payload 
-        }
+        },
+        stageIds: [ 
+            ...state.stageIds,
+            action.payload.id
+        ]
     })
 }, initialState)

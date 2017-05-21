@@ -1,15 +1,12 @@
 import { createAction, createActions } from 'redux-actions'
 
 export default {
-    addStage: createAction('ADD_STAGE', name => {
-        const options = {
+    addStage: createAction('ADD_STAGE', async name => 
+        await fetch('http://localhost:3000/stage', {
             method: 'POST',
             body: {
                 name: name,
                 order: 0,
             }
-        }
-        return fetch('http://localhost:3000/stage', options)
-            .then(res => res.json())
-    })
+        }).then(res => res.json()))
 }

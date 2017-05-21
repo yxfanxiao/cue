@@ -10,16 +10,21 @@ import stageActionCreators from 'ACTIONS/stage'
 @connect(
     state => ({
         scrum: state.scrum,
+        stage: state.stage,
     }),
     stageActionCreators,
 )
-
 export default class Project extends Component {
     render() {
         return (
             <div className='project'>
                 <ProjectNav />
-                <Kanban scrum={this.props.scrum} addStage={this.props.addStage} />
+                <Kanban
+                    scrum={this.props.scrum}
+                    stages={this.props.stage.stages}
+                    stageIds={this.props.stage.stageIds}
+                    addStage={this.props.addStage}
+                />
             </div>
         )
     }

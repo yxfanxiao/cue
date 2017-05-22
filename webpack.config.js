@@ -24,6 +24,7 @@ module.exports = {
             { test: /\.jsx?$/, use: 'babel-loader' },
             { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' } ]},
             { test: /\.less$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' } ]},
+            { test: /\.(otf|eot|svg|ttf|woff|woff2).*$/, use: 'url-loader?limit=8192' }
         ],
     },
     resolve: {

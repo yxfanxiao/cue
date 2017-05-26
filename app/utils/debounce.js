@@ -4,7 +4,9 @@ export function debounce(func, wait = 100) {
     }
 
     let timer = null,
-        result = context = args = undefined
+        result = undefined,
+        context = undefined,
+        args = undefined
 
     const later = function() {
         result = func.apply(context, args)

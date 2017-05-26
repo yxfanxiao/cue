@@ -22,8 +22,46 @@
             flex: 0 0 @stage-width;
             height: 100%;
             background: @stage-background;
-            overflow-y: scroll;
+            // overflow-y: scroll;
             margin-right: @kanban-padding;
+        }
+    }
+}
+
+
+.stage {
+    display: flex;
+    flex-flow: column nowrap;
+
+    > .stage-header {
+        flex: 0 0 @header-height;    
+    }
+
+    > .stage-content-wrapper {
+        flex: 1 0 0;
+        padding-bottom: @header-height;
+        display: flex;
+        flex-flow: column nowrap;
+        position: relative;
+
+        > .stage-content {
+            overflow-y: scroll;
+
+            > .tasks {
+
+                > li {
+                    height: 200px;
+                }
+            }
+        
+            > .task-creator {
+                height: @header-height;
+            }
+
+            > .task-creator.fix-task-creator {
+                position: absolute;
+                bottom: 0;
+            }
         }
     }
 }

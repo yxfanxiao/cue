@@ -15,5 +15,5 @@ export default handleActions({
             ...state.stageIds,
             action.payload.id
         ]
-    })
+    }),
 }, initialState)

@@ -5,7 +5,9 @@ export function throttle(func, wait = 100) {
 
     let previous = 0,
         timer = null,
-        result = context = args = undefined
+        result = undefined,
+        context = undefined,
+        args = undefined
 
     const later = function() {
         result = func.apply(context, args)
